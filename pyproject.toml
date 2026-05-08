@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bedrockstack"
+version = "0.1.0"
+description = "Low-level Python ergonomics for AWS Bedrock + Anthropic Claude: retries, cost ledger, streaming-error normalization."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Mukunda Katta", email = "mukunda.vjcs6@gmail.com" }]
+keywords = ["bedrock", "anthropic", "claude", "aws", "retry", "cost-tracking", "streaming"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5"]
+
+[project.urls]
+Homepage = "https://github.com/MukundaKatta/bedrockstack"
+Issues = "https://github.com/MukundaKatta/bedrockstack/issues"
+Repository = "https://github.com/MukundaKatta/bedrockstack"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bedrockstack"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/bedrockstack",
+    "tests",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "pyproject.toml",
+    ".github/workflows",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q"
