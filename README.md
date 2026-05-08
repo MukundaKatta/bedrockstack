@@ -107,6 +107,14 @@ The same `wrap_stream()` works against the native Anthropic client and `Anthropi
 - Not a prompt-caching auditor — that's [bedrockcache](https://github.com/MukundaKatta/bedrockcache).
 - Bedrock + Anthropic-only. No OpenAI / Vertex / Azure surface.
 
+## Sibling libraries
+
+Three independent libraries that compose around Anthropic-on-Bedrock:
+
+- [**bedrockcache**](https://github.com/MukundaKatta/bedrockcache) — static auditor for prompt caching.
+- **bedrockstack** (this) — retry policy, cost ledger, streaming-error normalization.
+- [**ragvitals**](https://github.com/MukundaKatta/ragvitals) — 5-dim drift detection for the RAG pipelines these models live inside.
+
 ## Roadmap
 
 - v0.2: `ToolRunner` with AnthropicBedrock parity (matches the native client's `messages.tool_runner`).
