@@ -115,6 +115,8 @@ Three independent libraries that compose around Anthropic-on-Bedrock:
 - **bedrockstack** (this) — retry policy, cost ledger, streaming-error normalization.
 - [**ragvitals**](https://github.com/MukundaKatta/ragvitals) — 5-dim drift detection for the RAG pipelines these models live inside.
 
+Landing repo with a runnable 50-line example wiring all three together: **[bedrock-production-stack](https://github.com/MukundaKatta/bedrock-production-stack)**.
+
 ## Roadmap
 
 - v0.2: `ToolRunner` with AnthropicBedrock parity (matches the native client's `messages.tool_runner`).
